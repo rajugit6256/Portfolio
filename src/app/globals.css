@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #090a10;
+  --surface: #10121c;
+  --surface-2: #151827;
+  --surface-3: #1b2031;
+  --text: #f4f5fb;
+  --muted: #a0a5b8;
+  --subtle: #747b92;
+  --border: rgba(171, 180, 214, 0.13);
+  --accent: #a78bfa;
+  --accent-2: #67d7f4;
+  --header: rgba(9, 10, 16, 0.78);
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
 }
 
+:root[data-theme="light"] {
+  --bg: #f7f8fc;
+  --surface: #fff;
+  --surface-2: #f0f1f8;
+  --surface-3: #e8eaf4;
+  --text: #171827;
+  --muted: #5e6478;
+  --subtle: #858ba0;
+  --border: rgba(34, 39, 65, 0.12);
+  --accent: #7654d6;
+  --accent-2: #168eae;
+  --header: rgba(247, 248, 252, 0.82);
+  --shadow: 0 24px 80px rgba(40, 42, 80, 0.1);
+}
+
+/* Register CSS variables as Tailwind theme tokens (v4 syntax) */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-header: var(--header);
+
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+
+  --shadow-card: var(--shadow);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s, color 0.25s;
+}
+
+.gradient-text {
+  background: linear-gradient(100deg, #b49bff 5%, #72d9ed 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.project-art-grid {
+  background-image: linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 25px 25px;
+  mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+  will-change: transform;
 }
