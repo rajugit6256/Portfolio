@@ -48,13 +48,13 @@ export function Header({ theme, setTheme }: {
       </nav>
 
       <div className="flex items-center gap-3">
-        <button
+        {/* <button
           className="grid h-9 w-9 place-items-center rounded-full border border-border bg-surface text-text"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
         >
           {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-        </button>
+        </button> */}
         <a className="hidden items-center gap-2.5 rounded-lg bg-gradient-to-r from-[#b9a3ff] to-[#7eddf2] px-3.5 py-2.5 text-[13px] font-bold text-[#100d1b] shadow-[0_8px_28px_rgba(150,124,239,0.16)] transition-transform hover:-translate-y-0.5 md:inline-flex" href="#contact">
           Let&apos;s talk <ArrowUpRight size={16} />
         </a>

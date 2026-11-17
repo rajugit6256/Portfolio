@@ -1,5 +1,5 @@
 import { ArrowUp, FileText, Mail } from "lucide-react";
-import { SECTION_WRAP } from "@/lib/data";
+import { SECTION_WRAP,resumeLink } from "@/lib/data";
 
 export function Footer() {
   return (
@@ -66,7 +66,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/resume.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition-colors hover:text-accent">
+                <a href={resumeLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition-colors hover:text-accent">
                   <FileText size={16} /> Download Resume
                 </a>
               </li>

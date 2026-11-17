@@ -24,6 +24,7 @@ export type ProjectDetail = {
   githubUrl?: string;
 };
 
+export const resumeLink = "https://drive.google.com/file/d/14XlG59n16_W-En_OoVHdgYZJoh80lehD"; 
 export const projects: ProjectDetail[] = [
   // ─────────────────────────────────────────────────────────────
   // 01 — beGalileo · Learning Platform
